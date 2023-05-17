@@ -6,15 +6,26 @@
 <!-- MAIN -->
 <?php
     include __DIR__ . '/Database/db.php';
-
-    // echo $movie1->getId();
-    // var_dump($movies);
-
-    echo $movie1->getInfo();
-    // echo $movie2->getInfo();
 ?>
-<div class="container">
 
+<div class="container">
+    <h1>Movies</h1>
+    <div class="row">
+        <?php foreach($movies as $movie) : ?>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-img-top">
+                        <img src="<?= $movie->image ?>" alt="<?= $movie->title ?>">
+                        
+                    </div>
+                    <div class="card-body">
+                        <h3><?= $movie->title ?></h3>
+                        <p><?= $movie->getInfo() ?></p>    
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 <!-- FOOTER -->
