@@ -31,9 +31,9 @@ class Movie
    {
     return $this->id;
    }
-   public function getFullMovie(): string
+   public function getInfo(): string
     {
-        return "<h3>$this->title $this->original_title $this->nationality $this->date $this->vote $this->image</h3>";
+        return "<h3>$this->title $this->original_title $this->nationality $this->date $this->vote {$this->genre->genre}</h3>";
     }
 
 }
