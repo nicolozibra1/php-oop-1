@@ -1,4 +1,6 @@
 <?php
+include_once __DIR__ . '/Genre.php';
+
 class Movie
 {
     private int $id;
@@ -8,8 +10,9 @@ class Movie
     public string $date;
     public float $vote;
     public string $image;
+    public $genre;
 
-   public function __construct(string $title, string $original_title, string $nationality, string $date, float $vote, string $image)
+   public function __construct(string $title, string $original_title, string $nationality, string $date, float $vote, string $image, Genre $genre)
    {
     $this->title = $title;
     $this->original_title = $original_title;
@@ -17,6 +20,7 @@ class Movie
     $this->date = $date;
     $this->vote = $vote;
     $this->image = $image;
+    $this->genre = $genre;
    }
 
    public function setId(int $id)
@@ -27,5 +31,9 @@ class Movie
    {
     return $this->id;
    }
+   public function getFullMovie(): string
+    {
+        return "<h3>$this->title $this->original_title $this->nationality $this->date $this->vote $this->image</h3>";
+    }
 
 }
