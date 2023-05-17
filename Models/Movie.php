@@ -33,7 +33,11 @@ class Movie
     }
     public function getInfo(): string
     {
-        return "<h3>$this->title $this->original_title $this->nationality $this->date $this->vote {$this->genre->genre}</h3>";
+        return "<span>Titolo originale: $this->original_title</span>
+                <span>Nazionalità: $this->nationality</span>
+                <span>Data di uscita: $this->date</span>
+                <span>Voto: $this->vote</span>
+                <span>Genere: {$this->genre->genre}</span>";
     }
 
 }
